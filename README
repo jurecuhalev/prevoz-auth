@@ -1,0 +1,4 @@
+Basic example demonstrating how to use OAuth2 based flow to authenticate user into Prevoz.org and create and delete a new ride.
+
+It's using oauth2client from Google, that you can download from: 
+https://code.google.com/p/google-api-python-client/downloads/list
