@@ -2,3 +2,18 @@ Basic example demonstrating how to use OAuth2 based flow to authenticate user in
 
 It's using oauth2client from Google, that you can download from: 
 https://code.google.com/p/google-api-python-client/downloads/list
+
+Endpoints:
+
+- https://prevoz.org/api/oauth2/authorize
+- https://prevoz.org/api/oauth2/token
+- https://prevoz.org/api/oauth2/revoke
+
+Scope value is ignored/can be empty. Currently you get access to everything (create/update/remove).
+
+Flow for mobile devices:
+
+- Generate authorize url and show user Web browser that user visits and grants permission to your app
+- Browser will be redirected to https://prevoz.org/simple/login/success/?code=123
+- Catch/detect this redirect and code and close browser window. You can also have custom endpoint, it just has to be https due to protocol requirements.
+- Finish token flow and save access token for later use. Right now tokens don't expire.
